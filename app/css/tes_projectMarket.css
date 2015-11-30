@@ -25,12 +25,25 @@
     border-width: 0px 0px 1px 0px;
     border-style: solid;
     border-color: #d9d9d9;
+    overflow: hidden;
 }
 .projectNameTitle a{
     margin-left: 20px;
     font-size: 25px;
     color: #969696;
     letter-spacing: 1px;
+
+}
+.downloadPosition {
+    margin-right:20px;
+    float:right;
+    color: #b9b9b9;
+}
+.downloadPosition span{
+    margin-right: 10px;
+}
+.downloadPosition a{
+    margin-left:0px;
 }
 .projectStatusInfo{
     position: relative;
