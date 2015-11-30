@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Crowdsourcing Testing</title>
+    <link href='https://fonts.googleapis.com/css?family=Ropa+Sans' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <link rel="stylesheet" type="text/css" href="css/tes_bugReportForm.css" />
+</head>
+<body>
+<!-- Wrap Begin -->
+<div class="wrap">
+
+
+    <!-- Top Side Begin -->
+    <div class="topSide">
+        <h1>Crowdsourcing Testing Platform</h1>
+        <ul>
+            <li><img src="img/userIco.png" alt="userIco.png" /></li>
+            <li><span id="userNameShow" >User Name</span></li>
+            <li> | </li>
+            <li id="signOut"><a href="index.html" target="_self">Sign Out</a> </li>
+        </ul>
+    </div>
+    <!-- Top Side End -->
+
+
+
+    <!-- Left Side Begin -->
+    <div class="leftSide">
+        <ul class="leftSideMenu">
+            <li><a href="tes_projectMarket.html" target="_self">Project Market</a></li>
+            <li><a href="tes_purchasingProject.html" target="_self">Purchasing Project</a></li>
+            <li><a href="tes_projectHistory.html" target="_self">Project History</a></li>
+            <li><a href="tes_creditWithdraw.html" target="_self">Credit Withdraw</a></li>
+            <li><a href="tes_projectInviation.html" target="_self">Project Inviation</a></li>
+            <li><a href="tes_myProfile.html" target="_self">My Profile</a></li>
+        </ul>
+    </div>
+    <!-- Left Side End -->
+
+
+
+    <!-- Right Side Begin -->
+    <div class="rightSide">
+        <div class="pageTitlePosition">
+            <h2>Bug Report</h2>
+            <div class="contentPosition">
+                <form id="bugReportForm">
+                    <ul>
+                        <li><h3>Project Title</h3></li>
+                        <li><span>Bug Subject:</span><input id="bugSubject" type="text" maxlength="80"/></li>
+                        <li><span>Bug-causing Condition:</span><textarea id="bugCondition"></textarea></li>
+                        <li><span>Expected Result:</span><textarea id="exResult"></textarea></li>
+                        <li><span>Actual Result:</span><textarea id="acResult"></textarea> </li>
+                        <li><button id="reportSubmit" type="submit">Submit</button>
+                            <button id="cancel" type="button">Cancel</button></li>
+                    </ul>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!--Right Side End-->
+
+    <div class="clear"></div>
+</div>
+<!-- Wrap End -->
+</body>
+</html>

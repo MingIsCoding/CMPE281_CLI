@@ -1,0 +1,52 @@
+#proCreateProject{
+    margin-top:10px;
+    width:900px;
+    color: #969696;
+}
+#proCreateProject span{
+    margin-right:10px;
+    font-size: 20px;
+
+}
+#proCreateProject select{
+    float: right;
+    height:30px;
+    width: 600px;
+    font-size: 20px;
+    color: #969696;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding: 2px 2px 2px 20px;
+    border: none;
+    background: transparent url("http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png") no-repeat left center;
+}
+#proCreateProject input{
+    float: right;
+    height:30px;
+    width: 600px;
+    font-size: 20px;
+    color: #969696;
+}
+
+#proCreateProject button{
+    margin-top:20px;
+    margin-bottom: 50px;
+    float:left;
+    height: 30px;
+    width:100px;
+    color: white;
+    font-family: 'Ropa Sans', sans-serif;
+    font-size:20px;
+    background-color: green;
+    line-height: 20px;
+    text-align: center;
+    border: solid 1px;
+    border-color: green;
+    border-radius: 5px;
+    cursor:pointer;
+}
+/* Animation */
+button:hover{
+    opacity: 0.7;
+}

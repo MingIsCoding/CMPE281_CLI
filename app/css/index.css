@@ -1,0 +1,120 @@
+@charset "utf-8";
+/* Index Style CSS Document */
+/* Basic Style */
+
+html, body, #centerBoxPosition
+{
+    display:block;
+    margin: 0;
+    padding: 0;
+    height:100%;
+    width:100%;
+    overflow: hidden;
+    font-family: 'Ropa Sans', sans-serif;
+    /*background-color: #f4f4f4*/
+}
+ol,ul{
+    list-style:none;
+}
+a{
+    text-decoration-line: none;
+}
+.class{
+    both: clear;
+}
+.wrap {
+    margin: auto;
+    width: 100%;
+    height: 100%;
+}
+/* Top Side Begin */
+.topSide{
+    position: fixed;
+    top:0;
+    height: 70px;
+    width: 100%;
+    border-width: 0px 0px 1px 0px;
+    border-style: solid;
+    border-color: #d9d9d9;
+    overflow: hidden;
+    z-index: 999;
+    background-color: #f4f4f4;
+    background:rgba(255, 255, 255, 0.38) none repeat scroll 0 0 !important;/*实现FF背景透明，文字不透明*/
+    filter:Alpha(opacity=80); background:#fff;/*实现IE背景透明*/
+}
+h1{
+    margin-left: 50px;
+    letter-spacing: 2px;
+    font-size: 35px;
+    color: #969696;
+}
+/* Top Side End */
+
+/* Center Box Position Begin */
+#centerBoxPosition
+{
+    display: table;
+}
+
+#centerBox
+{
+    display: table-cell;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    vertical-align: middle;
+}
+#content
+{
+    margin: auto;
+    width: 380px;
+    height: 190px;
+    background-color:red;
+}
+/* Center Box Position End */
+
+/* Ico Area Begin */
+.testerIco{
+    float: left;
+    height: 190px;
+    width: 190px;
+    background-color: #ec6a31;
+}
+.providerIco{
+    float: left;
+    height: 190px;
+    width: 190px;
+    background-color: #b038ec;
+}
+img{
+    margin-top:55px;
+}
+h4{
+    margin-top: 5px;
+    font-weight: 200;
+    font-style: normal;
+    font-size: 28px;
+    line-height: 30px;
+    color: white;
+}
+/* Ico Area End */
+
+/* Animation */
+.testerIco:hover , .providerIco:hover{
+    opacity: 0.8;
+}
+
+/* Bootstrap Login Begin */
+.modal-header-tester, h6, .close {
+    background-color: #ec6a31;
+    color:white !important;
+    text-align: center;
+    font-size: 30px;
+}
+.modal-header-provider{
+    background-color: #b038ec;
+}
+.modal-footer {
+    background-color: #f9f9f9;
+}
+/* Bootstrap Login End */

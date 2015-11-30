@@ -1,0 +1,104 @@
+.contentPosition{
+    color: #969696;
+}
+h3{
+    font-size: 30px;
+}
+.contentPosition,#feedboackForm  ul li{
+    margin-top:10px;
+    width:1000px;
+}
+.contentPosition,#feedboackForm span{
+    float:left;
+    height: 30px;
+    font-size: 25px;
+    line-height: 30px;
+    text-align: left;
+}
+p{
+    border-style: none;
+    font-size: 20px;
+    color: #969696;
+    line-height: 20px;
+}
+.bugSubject{
+    float:right;
+    width:1000px;
+    overflow-y: auto;
+}
+.textContent{
+    float: right;
+    width:1000px;
+    resize: none;
+    font-family: 'Ropa Sans', sans-serif;
+    font-size:16px;
+    color: #969696;
+    border-style: none;
+}
+#feedboackForm select{
+    margin-left:10px;
+    height: 30px;
+    width:200px;
+    font-size: 20px;
+    color: #969696;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding: 2px 2px 2px 20px;
+    border: none;
+    background: transparent url("http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png") no-repeat left center;
+}
+#feedboackForm option{
+    opacity: 0.7;
+}
+#feedboackForm .invalid{
+    color:#969696;
+}
+#feedboackForm .light{
+    color: green;
+}
+#feedboackForm .middle{
+    color: #edcd3c;
+}
+#feedboackForm .serious{
+    color: #ed1c32;
+}
+textarea{
+    float: right;
+    margin-top:20px;
+    height:300px;
+    width:1000px;
+    resize: none;
+    overflow-x: auto;
+    overflow-y: scroll;
+    font-family: 'Ropa Sans', sans-serif;
+    font-size:16px;
+    color: #969696;
+    border-style: none;
+}
+#noted{
+    font-style: italic;
+    color: #ff6b66;
+    opacity: 0.7;
+}
+#leaveFeedback{
+    margin-top:20px;
+    margin-bottom: 50px;
+    float:left;
+    height: 30px;
+    width:100px;
+    color: white;
+    font-family: 'Ropa Sans', sans-serif;
+    font-size:20px;
+    background-color: green;
+    line-height: 20px;
+    text-align: center;
+    border: solid 1px;
+    border-color: green;
+    border-radius: 5px;
+    cursor:pointer;
+}
+
+button:hover{
+    opacity: 0.7;
+}

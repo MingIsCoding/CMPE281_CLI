@@ -1,0 +1,67 @@
+.contentPosition{
+    color: #969696;
+}
+h3{
+    font-size: 30px;
+}
+.contentPosition ul li{
+    margin-top:10px;
+    width:800px;
+}
+.contentPosition span{
+    height: 30px;
+    font-size: 20px;
+    line-height: 30px;
+    text-align: left;
+}
+
+textarea{
+    float: right;
+    height:300px;
+    width:800px;
+    resize: none;
+    overflow-x: auto;
+    overflow-y: scroll;
+    font-family: 'Ropa Sans', sans-serif;
+    font-size:16px;
+    color: #969696;
+    border-style: none;
+}
+
+#reportSubmit{
+    margin-top:20px;
+    margin-bottom: 50px;
+    float:left;
+    height: 30px;
+    width:100px;
+    color: white;
+    font-family: 'Ropa Sans', sans-serif;
+    font-size:20px;
+    background-color: green;
+    line-height: 20px;
+    text-align: center;
+    border: solid 1px;
+    border-color: green;
+    border-radius: 5px;
+    cursor:pointer;
+}
+#cancel{
+    margin-top:20px;
+    margin-bottom: 50px;
+    float:right;
+    height: 30px;
+    width:100px;
+    color: white;
+    font-family: 'Ropa Sans', sans-serif;
+    font-size:20px;
+    background-color: red;
+    line-height: 20px;
+    text-align: center;
+    border: solid 1px;
+    border-color: red;
+    border-radius: 5px;
+    cursor:pointer;
+}
+button:hover{
+    opacity: 0.7;
+}

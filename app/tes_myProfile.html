@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Crowdsourcing Testing</title>
+    <link href='https://fonts.googleapis.com/css?family=Ropa+Sans' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <link rel="stylesheet" type="text/css" href="css/tes_myProfile.css" />
+</head>
+<body>
+<!-- Wrap Begin -->
+<div class="wrap">
+
+
+    <!-- Top Side Begin -->
+    <div class="topSide">
+        <h1>Crowdsourcing Testing Platform</h1>
+        <ul>
+            <li><img src="img/userIco.png" alt="userIco.png" /></li>
+            <li><span id="userNameShow" >User Name</span></li>
+            <li> | </li>
+            <li id="signOut"><a href="index.html" target="_self">Sign Out</a> </li>
+        </ul>
+    </div>
+    <!-- Top Side End -->
+
+
+
+    <!-- Left Side Begin -->
+    <div class="leftSide">
+        <ul class="leftSideMenu">
+            <li><a href="tes_projectMarket.html" target="_self">Project Market</a></li>
+            <li><a href="tes_purchasingProject.html" target="_self">Purchasing Project</a></li>
+            <li><a href="tes_projectHistory.html" target="_self">Project History</a></li>
+            <li><a href="tes_creditWithdraw.html" target="_self">Credit Withdraw</a></li>
+            <li><a href="tes_projectInviation.html" target="_self">Project Inviation</a></li>
+            <li><a href="tes_myProfile.html" target="_self">My Profile</a></li>
+        </ul>
+    </div>
+    <!-- Left Side End -->
+
+
+
+    <!-- Right Side Begin -->
+    <div class="rightSide">
+        <div class="pageTitlePosition">
+            <h2>My Profile</h2>
+            <div class="contentPosition">
+                <ul>
+                    <li><h3>User Information</h3></li>
+                    <li id="errorReport"></li>
+                    <li>
+                        <span>Registration Type:</span> Tester
+                    </li>
+                    <li><span>Credit Scores</span>1980</li>
+                    <li><span>Username:</span>Leonsaber</li>
+                    <li><span>First Name:</span>Leon</li>
+                    <li><span>Last Name:</span>Zhang</li>
+                    <li><span>Email:</span>123@test.com</li>
+                    <li>
+                        <form id="resetpwd">
+                            <ul>
+                                <li><span>Old Password:</span><input id= "oldpassword" type="password" required/></li>
+                                <li><span>New Password:</span><input id= "newpassword" type="password" required/></li>
+                                <li><span>Re-Password:</span><input id="repassword" type="password" required/></span></li>
+                                <li><button id="resetpwdButton" type="Submit">Submit</button></li>
+                            </ul>
+                        </form>
+                    </li>
+
+                    <li><h3>Payment Information</h3></li>
+                    <li><span>Old Card Number:</span>123456789876543</li>
+                    <li>
+                        <form id="resetPay">
+                            <ul>
+                                <li>
+                                    <span>Card Type:</span>
+                                    <select id="cardtype" required>
+                                        <option value="visa">VISA</option>
+                                        <option value="master">MASTER</option>
+                                        <option value="ae">American Express</option>
+                                    </select>
+                                </li>
+                                <li><span>Card Number</span><input id="cardnumber" type="number" max="9999999999999999" required/></li>
+                                <li><span>Card Holder Name</span><input id="holdername" type="text" required/></li>
+                                <li>
+                                    <span>Valid Thru</span>
+                                    <select id="vaildmounth" required>
+                                        <option value="">Month</option>
+                                        <option value="01">01</option>
+                                        <option value="02">02</option>
+                                        <option value="03">03</option>
+                                        <option value="04">04</option>
+                                        <option value="05">05</option>
+                                        <option value="06">06</option>
+                                        <option value="07">07</option>
+                                        <option value="08">08</option>
+                                        <option value="09">09</option>
+                                        <option value="10">10</option>
+                                        <option value="11">11</option>
+                                        <option value="12">12</option>
+                                    </select>
+                                </li>
+                                <li>
+                                    <span></span>
+                                    <select id="vaildyear" required>
+                                        <option value="">Year</option>
+                                        <option value="2015">2015</option>
+                                        <option value="2016">2016</option>
+                                        <option value="2017">2017</option>
+                                        <option value="2018">2018</option>
+                                        <option value="2019">2019</option>
+                                        <option value="2020">2020</option>
+                                    </select>
+                                </li>
+                                <li><span>CSC</span><input id="csc" type="number" max="9999" required/></li>
+                                <li><span>Billing Address</span><input id= "billaddress" type="text"  required/></li>
+                                <li><span>City</span><input id= "city" type="text"  required/></li>
+                                <li><span>State</span>
+                                    <select id="state" required>
+                                        <option value="AL">Alabama</option>
+                                        <option value="AK">Alaska</option>
+                                        <option value="AZ">Arizona</option>
+                                        <option value="AR">Arkansas</option>
+                                        <option value="CA">California</option>
+                                        <option value="CO">Colorado</option>
+                                        <option value="CT">Connecticut</option>
+                                        <option value="DE">Delaware</option>
+                                        <option value="DC">District Of Columbia</option>
+                                        <option value="FL">Florida</option>
+                                        <option value="GA">Georgia</option>
+                                        <option value="HI">Hawaii</option>
+                                        <option value="ID">Idaho</option>
+                                        <option value="IL">Illinois</option>
+                                        <option value="IN">Indiana</option>
+                                        <option value="IA">Iowa</option>
+                                        <option value="KS">Kansas</option>
+                                        <option value="KY">Kentucky</option>
+                                        <option value="LA">Louisiana</option>
+                                        <option value="ME">Maine</option>
+                                        <option value="MD">Maryland</option>
+                                        <option value="MA">Massachusetts</option>
+                                        <option value="MI">Michigan</option>
+                                        <option value="MN">Minnesota</option>
+                                        <option value="MS">Mississippi</option>
+                                        <option value="MO">Missouri</option>
+                                        <option value="MT">Montana</option>
+                                        <option value="NE">Nebraska</option>
+                                        <option value="NV">Nevada</option>
+                                        <option value="NH">New Hampshire</option>
+                                        <option value="NJ">New Jersey</option>
+                                        <option value="NM">New Mexico</option>
+                                        <option value="NY">New York</option>
+                                        <option value="NC">North Carolina</option>
+                                        <option value="ND">North Dakota</option>
+                                        <option value="OH">Ohio</option>
+                                        <option value="OK">Oklahoma</option>
+                                        <option value="OR">Oregon</option>
+                                        <option value="PA">Pennsylvania</option>
+                                        <option value="RI">Rhode Island</option>
+                                        <option value="SC">South Carolina</option>
+                                        <option value="SD">South Dakota</option>
+                                        <option value="TN">Tennessee</option>
+                                        <option value="TX">Texas</option>
+                                        <option value="UT">Utah</option>
+                                        <option value="VT">Vermont</option>
+                                        <option value="VA">Virginia</option>
+                                        <option value="WA">Washington</option>
+                                        <option value="WV">West Virginia</option>
+                                        <option value="WI">Wisconsin</option>
+                                        <option value="WY">Wyoming</option>
+                                    </select>
+                                </li>
+                                <li><span>Zip Code</span><input id= "zip" type="number" maxlength="99999" required/></li>
+                                <li><button id="newcardsubmit" type="submit">Submit</button> </li>
+                            </ul>
+                        </form>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--Right Side End-->
+
+    <div class="clear"></div>
+</div>
+<!-- Wrap End -->
+</body>
+</html>
