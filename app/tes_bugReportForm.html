@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html ng-app="CloudTestApp">
 <head>
     <meta charset="UTF-8">
     <title>Crowdsourcing Testing</title>
     <link href='https://fonts.googleapis.com/css?family=Ropa+Sans' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="css/main.css" />
     <link rel="stylesheet" type="text/css" href="css/tes_bugReportForm.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.2/angular.min.js"></script>
+    <script src="js/controllers.js"></script>
 </head>
 <body>
 <!-- Wrap Begin -->
@@ -45,14 +47,14 @@
     <div class="rightSide">
         <div class="pageTitlePosition">
             <h2>Bug Report</h2>
-            <div class="contentPosition">
-                <form id="bugReportForm">
+            <div class="contentPosition" ng-controller="CloudTestAppController">
+                <form id="bugReportForm" ng-submit="processCreateBug()">
                     <ul>
                         <li><h3>Project Title</h3></li>
-                        <li><span>Bug Subject:</span><input id="bugSubject" type="text" maxlength="80"/></li>
-                        <li><span>Bug-causing Condition:</span><textarea id="bugCondition"></textarea></li>
-                        <li><span>Expected Result:</span><textarea id="exResult"></textarea></li>
-                        <li><span>Actual Result:</span><textarea id="acResult"></textarea> </li>
+                        <li><span>Bug Subject:</span><input id="bugSubject" type="text" maxlength="80"ng-model="formCreateBugData.bugName"/></li>
+                        <li><span>Bug-causing Condition:</span><textarea id="bugCondition"ng-model="formCreateBugData.causingCondition"></textarea></li>
+                        <li><span>Expected Result:</span><textarea id="exResult"ng-model="formCreateBugData.expetedResult"></textarea></li>
+                        <li><span>Actual Result:</span><textarea id="acResult"ng-model="formCreateBugData.actualResult"></textarea> </li>
                         <li><button id="reportSubmit" type="submit">Submit</button>
                             <button id="cancel" type="button">Cancel</button></li>
                     </ul>

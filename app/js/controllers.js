@@ -1,11 +1,26 @@
 /** Angular CloudTest app controller */
-var server_url = "http://127.0.0.1:5000";
+var server_url = "http://10.2.11.233:5000";
 
 angular.module('CloudTestApp', [])
     .controller('CloudTestAppController', ['$scope', '$http', function ($scope, $http) {
 
+    var myDate=new Date();
     $scope.formSigninData = {};
-    $scope.formSignupData = {};
+    $scope.formSignupData = {
+        "money": 0,
+        "credit":0
+    };
+    $scope.formCreateProjectData = {
+        "userId" : "1",
+        "appDownloadAdd" : "",
+        "docDownloadAdd" : ""
+    };
+    $scope.formCreateProjectData.startTime = new Date();
+    $scope.formCreateBugData = {
+        "projectId":"1",
+	    "userId":"1",
+	    "bugLevel" : ""
+    };
 
     function getHeaders() {
         return {
@@ -30,7 +45,7 @@ angular.module('CloudTestApp', [])
             headers : getHeaders()
         }).then(function(data) {
             console.log(data);
-            window.location = server_url+'/main_user_template.html'; //redirect to dashboard
+            window.location = 'main_user_template.html'; //redirect to dashboard
         }, function(err) {
             alert('Fail to login. Please try again');
         });
@@ -38,58 +53,6 @@ angular.module('CloudTestApp', [])
 
     /** Handle sign up**/
     $scope.processSignup = function(){
-        if(!$scope.formSignupData.username){
-            $('.signup.userNameRow.err').removeClass('hidden');
-            return false;
-        }
-        if(!$scope.formSignupData.firstname){
-            $('.signup.firstnameNameRow.err').removeClass('hidden');
-            return false;
-        }
-        if(!$scope.formSignupData.lastname){
-            $('.signup.lastnameNameRow.err').removeClass('hidden');
-            return false;
-        }
-        if(!$scope.formSignupData.password){
-            $('.signup.passwordNameRow.err').removeClass('hidden');
-            return false;
-        }
-        if(!$scope.formSignupData.email){
-            $('.signup.emailNameRow.err').removeClass('hidden');
-            return false;
-        }
-        if(!scope.formSignupData.cardtype){
-            $('.signup.cardtypeNameRow.err').removeClass('hidden');
-            return false;
-        }
-        if(!scope.formSignupData.holdername){
-            $('signup.holdernameNameRow.err').removeClass('hidden');
-            return false;
-        }
-        if(!scope.formSignupData.validmonth){
-            $('signup.validmonthNameRow.err').removeClass('hidden');
-            return false;
-        }
-        if(!scope.formSignupData.validyear){
-            $('signup.validyearNameRow.err').removeClass('hidden');
-            return false;
-        }
-        if(!scope.formSignupData.csc){
-            $('signup.cscNameRow.err').removeClass('hidden');
-            return false;
-        }
-        if(!scope.formSignupData.billaddress){
-            $('signup.billaddressNameRow.err').removeClass('hidden');
-            return false;
-        }
-        if(!scope.formSignupData.city){
-            $('signup.cityNameRow.err').removeClass('hidden');
-            return false;
-        }
-        if(!scope.formSignupData.state){
-            $('signup.stateNameRow.err').removeClass('hidden');
-            return false;
-        }
         console.log(JSON.stringify($scope.formSignupData));
         $http({
             method  : 'POST',
@@ -98,9 +61,41 @@ angular.module('CloudTestApp', [])
             headers : getHeaders()
         }).then(function(data) {
             console.log(data);
-            window.location = server_url+'/main_user_template.html'; //redirect to dashboard
+            window.location ='main_user_template.html'; //redirect to dashboard
         }, function(err) {
             alert('Fail to sign up. Please try again');
+        });
+    };
+
+    /*Handle create a new project*/
+    $scope.processCreatProject=function(){
+        console.log(JSON.stringify($scope.formCreateProjectData));
+        $http({
+            method  : 'POST',
+            url     : server_url+'/createproject',
+            data    : $scope.formCreateProjectData,  // pass in data as strings
+            headers : getHeaders()
+        }).then(function(data) {
+            console.log(data);
+            window.location = 'main_user_template.html'; //redirect to dashboard
+        }, function(err) {
+            alert('Fail to create project. Please try again');
+        });
+    };
+
+    /*Handle create a new bug*/
+    $scope.processCreateBug=function(){
+        console.log(JSON.stringify($scope.formCreateBugData));
+        $http({
+            method  : 'POST',
+            url     : server_url+'/createbug',
+            data    : $scope.formCreateBugData,  // pass in data as strings
+            headers : getHeaders()
+        }).then(function(data) {
+            console.log(data);
+            window.location = 'main_user_template.html'; //redirect to dashboard
+        }, function(err) {
+            alert('Fail to create project. Please try again');
         });
     };
 }]);

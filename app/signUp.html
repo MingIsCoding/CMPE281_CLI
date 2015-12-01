@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html ng-app="CloudTestApp">
 <head>
     <meta charset="UTF-8">
     <title>Crowdsourcing Testing Platform</title>
     <link href='https://fonts.googleapis.com/css?family=Ropa+Sans' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="css/signUp&resetpwd.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.2/angular.min.js"></script>
+    <script src="js/controllers.js"></script>
 </head>
 <body>
 <div class="wrap">
@@ -16,38 +18,38 @@
             <div id="content">
 
                 <!-- User Sign Up Form Begin -->
-                <div class="signUpForm">
-                    <form>
+                <div class="signUpForm" ng-controller="CloudTestAppController">
+                    <form ng-submit="processSignup()">
                         <ul>
                             <li><h3>User Information</h3></li>
                             <li id="errorReport"></li>
                             <li>
                                 <span>Registration Type:</span>
-                                <select id="registrationType" required>
+                                <select id="registrationType" ng-model="formSignupData.roleName"required>
                                     <option value="provider">Provider</option>
                                     <option value="tester">Tester</option>
                                 </select>
                             </li>
-                            <li><span>Username:</span><input id= "username" type="text" required/></li>
-                            <li><span>First Name:</span><input id= "firstname" type="text" required/></li>
-                            <li><span>Last Name:</span><input id="lastname" type="text" required/></li>
-                            <li><span>Password:</span><input id= "password" type="password" required/></li>
+                            <li><span>Username:</span><input id= "username" type="text" ng-model="formSignupData.username" required/></li>
+                            <li><span>First Name:</span><input id= "firstname" type="text" ng-model="formSignupData.firstName" required/></li>
+                            <li><span>Last Name:</span><input id="lastname" type="text" ng-model="formSignupData.lastName" required/></li>
+                            <li><span>Password:</span><input id= "password" type="password" ng-model="formSignupData.password" required/></li>
                             <li><span>Re-Password:</span><input id="repassword" type="password" required/></span></li>
-                            <li><span>Email:</span><input id="email" type="email" /></li>
+                            <li><span>Email:</span><input id="email" type="email" ng-model="formSignupData.email" /></li>
                             <li><h3>Payment Information</h3></li>
                             <li>
                                 <span>Card Type:</span>
-                                <select id="cardtype" required>
+                                <select id="cardtype" ng-model="formSignupData.cardType" required>
                                     <option value="visa">VISA</option>
                                     <option value="master">MASTER</option>
                                     <option value="ae">American Express</option>
                                 </select>
                             </li>
-                            <li><span>Card Number</span><input id="cardnumber" type="number" max="9999999999999999" required/></li>
-                            <li><span>Card Holder Name</span><input id="holdername" type="text" required/></li>
+                            <li><span>Card Number</span><input id="cardNumber" type="text" max="9999999999999999" ng-model="formSignupData.cardNumber" required/></li>
+                            <li><span>Card Holder Name</span><input id="cardHolder" type="text" ng-model="formSignupData.cardHolder" required/></li>
                             <li>
                                 <span>Valid Thru</span>
-                                <select id="vaildmounth" required>
+                                <select id="vaildmounth" ng-model="formSignupData.validDate" required>
                                     <option value="">Month</option>
                                     <option value="01">01</option>
                                     <option value="02">02</option>
@@ -65,7 +67,7 @@
                             </li>
                             <li>
                                 <span></span>
-                                <select id="vaildyear" required>
+                                <select id="vaildyear"required>
                                     <option value="">Year</option>
                                     <option value="2015">2015</option>
                                     <option value="2016">2016</option>
@@ -75,11 +77,11 @@
                                     <option value="2020">2020</option>
                                 </select>
                             </li>
-                            <li><span>CSC</span><input id="csc" type="number" max="9999" required/></li>
-                            <li><span>Billing Address</span><input id= "billaddress" type="text"  required/></li>
-                            <li><span>City</span><input id= "city" type="text"  required/></li>
+                            <li><span>CSC</span><input id="csc" type="text" max="9999" ng-model="formSignupData.csc" required/></li>
+                            <li><span>Billing Address</span><input id= "billaddress" type="text"  ng-model="formSignupData.billingAddress" required/></li>
+                            <li><span>City</span><input id= "city" type="text"  ng-model="formSignupData.city" required/></li>
                             <li><span>State</span>
-                                <select id="state" required>
+                                <select id="state" ng-model="formSignupData.state" required>
                                     <option value="AL">Alabama</option>
                                     <option value="AK">Alaska</option>
                                     <option value="AZ">Arizona</option>
@@ -133,7 +135,7 @@
                                     <option value="WY">Wyoming</option>
                                 </select>
                             </li>
-                            <li><span>Zip Code</span><input id= "zip" type="number" maxlength="99999" required/></li>
+                            <li><span>Zip Code</span><input id= "zip" type="text" maxlength="99999" ng-model="formSignupData.zipcode" required/></li>
                             <li><button id="submit" type="submit">Submit</button> </li>
                         </ul>
                     </form>
