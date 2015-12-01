@@ -4,13 +4,23 @@ var server_url = "http://127.0.0.1:5000";
 angular.module('CloudTestApp', ['ngStorage'])
     .controller('CloudTestAppController', ['$scope', '$http','$localStorage','$sessionStorage', function ($scope, $http,$localStorage,$sessionStorage) {
 
+	var myDate=new Date();
     $scope.formSigninData = {};
-    $scope.formSignupData = {};
-        $localStorage.hello = 'world';
-    //$sessionStorage.loggedin_user = {};
-    //$scope.loggedin_user = {};
-    //$scope.$storage = $sessionStorage;//.$default({});
-        $scope.$storage = {};
+    $scope.formSignupData = {
+        "money": 0,
+        "credit":0
+    };
+    $scope.formCreateProjectData = {
+        "userId" : "1",
+        "appDownloadAdd" : "",
+        "docDownloadAdd" : ""
+    };
+    $scope.formCreateProjectData.startTime = new Date();
+    $scope.formCreateBugData = {
+        "projectId":"1",
+	    "userId":"1",
+	    "bugLevel" : ""
+    };
     //$scope.$storage.loggedin_user = {};
         function getHeaders() {
         return {
@@ -119,6 +129,37 @@ angular.module('CloudTestApp', ['ngStorage'])
             window.location = server_url+'/main_user_template.html'; //redirect to dashboard
         }, function(err) {
             alert('Fail to sign up. Please try again');
+        });
+    };
+    /*Handle create a new project*/
+    $scope.processCreatProject=function(){
+        console.log(JSON.stringify($scope.formCreateProjectData));
+        $http({
+            method  : 'POST',
+            url     : server_url+'/createproject',
+            data    : $scope.formCreateProjectData,  // pass in data as strings
+            headers : getHeaders()
+        }).then(function(data) {
+            console.log(data);
+            window.location = 'main_user_template.html'; //redirect to dashboard
+        }, function(err) {
+            alert('Fail to create project. Please try again');
+        });
+    };
+
+    /*Handle create a new bug*/
+    $scope.processCreateBug=function(){
+        console.log(JSON.stringify($scope.formCreateBugData));
+        $http({
+            method  : 'POST',
+            url     : server_url+'/createbug',
+            data    : $scope.formCreateBugData,  // pass in data as strings
+            headers : getHeaders()
+        }).then(function(data) {
+            console.log(data);
+            window.location = 'main_user_template.html'; //redirect to dashboard
+        }, function(err) {
+            alert('Fail to create project. Please try again');
         });
     };
 }]);
