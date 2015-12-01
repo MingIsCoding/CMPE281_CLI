@@ -6,21 +6,7 @@ angular.module('CloudTestApp', ['ngStorage'])
 
 	var myDate=new Date();
     $scope.formSigninData = {};
-    $scope.formSignupData = {
-        "money": 0,
-        "credit":0
-    };
-    $scope.formCreateProjectData = {
-        "userId" : "1",
-        "appDownloadAdd" : "",
-        "docDownloadAdd" : ""
-    };
-    $scope.formCreateProjectData.startTime = new Date();
-    $scope.formCreateBugData = {
-        "projectId":"1",
-	    "userId":"1",
-	    "bugLevel" : ""
-    };
+
     //$scope.$storage.loggedin_user = {};
         function getHeaders() {
         return {
@@ -51,7 +37,7 @@ angular.module('CloudTestApp', ['ngStorage'])
             $localStorage.hello = "hello";
             //$scope.$storage.loggedin_user = data.data.results[0];
             console.log("storing $sessionStorage :"+JSON.stringify($localStorage.loggedin_user));
-            console.log("storing $storage :"+JSON.stringify($scope.$storage.loggedin_user));
+            //console.log("storing $storage :"+JSON.stringify($scope.$storage.loggedin_user));
             window.location = 'main_template.html'; //redirect to dashboard
         }, function(err) {
             alert('Fail to login. Please try again');
@@ -60,13 +46,17 @@ angular.module('CloudTestApp', ['ngStorage'])
 
     $scope.dashboard_load = function(){
         console.log("hello:"+$localStorage.hello);
-        console.log("read from local storage"+JSON.stringify($scope.$storage.loggedin_user));
+        //console.log("read from local storage"+JSON.stringify($scope.$storage.loggedin_user));
         console.log("read from $sessionStorage in:"+JSON.stringify($localStorage.loggedin_user));
         console.log("username:"+$localStorage.username)
         }
     /** Handle sign up**/
+    $scope.formSignupData = {
+        "money": 0,
+        "credit":0
+    };
     $scope.processSignup = function(){
-        if(!$scope.formSignupData.username){
+/*        if(!$scope.formSignupData.username){
             $('.signup.userNameRow.err').removeClass('hidden');
             return false;
         }
@@ -117,7 +107,7 @@ angular.module('CloudTestApp', ['ngStorage'])
         if(!scope.formSignupData.state){
             $('signup.stateNameRow.err').removeClass('hidden');
             return false;
-        }
+        }*/
         console.log(JSON.stringify($scope.formSignupData));
         $http({
             method  : 'POST',
@@ -132,6 +122,12 @@ angular.module('CloudTestApp', ['ngStorage'])
         });
     };
     /*Handle create a new project*/
+    $scope.formCreateProjectData = {
+            "userId" : "1",
+            "appDownloadAdd" : "",
+            "docDownloadAdd" : ""
+    };
+    $scope.formCreateProjectData.startTime = new Date();
     $scope.processCreatProject=function(){
         console.log(JSON.stringify($scope.formCreateProjectData));
         $http({
@@ -162,10 +158,16 @@ angular.module('CloudTestApp', ['ngStorage'])
             alert('Fail to create project. Please try again');
         });
     };
+
+    $scope.formCreateBugData = {
+        "projectId":"1",
+        "userId":"1",
+        "bugLevel" : ""
+    };
 }]);
-/*
+
 
 function loadRightContent (module_name){
     $("#right_content").load(module_name);
 }
-*/
+
