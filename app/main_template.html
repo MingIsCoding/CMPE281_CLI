@@ -2,7 +2,7 @@
 <html lang="en" ng-app="CloudTestApp">
 <head>
     <meta charset="UTF-8">
-    <title>Crowdsourcing Testing</title>
+    <title>AppZone Testing</title>
     <link href='css/css.css' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="css/main.css" />
     <script src="js/lib/angular.min.js"></script>
@@ -16,7 +16,7 @@
     <div data-ng-init="dashboard_load()" ></div>
     <!-- Top Side Begin -->
     <div class="topSide">
-        <h1>Crowdsourcing Testing Platform
+        <h1>AppZone Testing Platform
             <span style=" font-size: 16px; color: brown;"
                   ng-show="loggedin_user.roleName == 2">App Provider</span>
             <span style=" font-size: 16px; color: brown;"
@@ -43,7 +43,7 @@
             <li><a onclick="loadRightContent('_pro_myProfile.html')">My profile</a></li>
         </ul>
         <ul class="leftSideMenu" id ="user_menu" ng-show="loggedin_user.roleName==1" ><!--ng-show="$storage.loggedin_user.roleName==1"  ng-show="$storage.loggedin_user.roleName==2"-->
-            <li><a onclick="loadRightContent('_tes_projectMarket.html')"href="" target="_self">Project Market</a></li>
+            <!--li><a onclick="loadRightContent('_tes_projectMarket.html')"href="" target="_self">Project Market</a></li-->
             <li><a onclick="loadRightContent('_tes_purchasingProject.html')" target="_self">My Project</a></li>
             <li><a onclick="loadRightContent('_tes_projectHistory.html')" target="_self">My Project History</a></li>
             <li><a onclick="loadRightContent('_tes_reportFeedback.html')" target="_self">My Bugs</a></li>
