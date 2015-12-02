@@ -16,15 +16,15 @@
     <div data-ng-init="dashboard_load()" ></div>
     <!-- Top Side Begin -->
     <div class="topSide">
-        <h1>Crowdsourcing Testing Platform{{3+6}}
+        <h1>Crowdsourcing Testing Platform
             <span style=" font-size: 16px; color: brown;"
-                  ng-show="$storage.loggedin_user.roleName == 1">App Provider</span>
+                  ng-show="loggedin_user.roleName == 2">App Provider</span>
             <span style=" font-size: 16px; color: brown;"
-                  ng-show="$storage.loggedin_user.roleName == 2">App Tester</span>
+                  ng-show="loggedin_user.roleName == 1">App Tester</span>
         </h1>
         <ul>
             <li><img src="img/userIco.png" alt="userIco.png" /></li>
-            <li><span id="userNameShow" >{{$storage.loggedin_user.username}}\{{$sessionStorage.loggedin_user.username}}</span></li>
+            <li><span id="userNameShow" >{{loggedin_user.username}}</span></li>
             <li> | </li>
             <li id="signOut"> Sign Out </li>
         </ul>
@@ -35,14 +35,14 @@
 
     <!-- Left Side Begin -->
     <div class="leftSide">
-        <ul class="leftSideMenu" id ="provider_menu" >
-            <li><a href="" target="_self" onclick="loadRightContent('_pro_create_new_proj.html')">Create New Project</a></li>
+        <ul class="leftSideMenu" id ="provider_menu" ng-show="loggedin_user.roleName==2" >
+            <li><a href="" onclick="loadRightContent('_pro_create_new_proj.html')">Create New Project</a></li>
             <li><a onclick="loadRightContent('_pro_projectReport.html')" href="" target="_self">Projects</a></li>
             <!--<li><a onclick="loadRightContent('_pro_projectReport.html')"href="pro_projectHistory.html" target="_self">Project History</a></li>-->
             <li><a onclick="loadRightContent('index.html')" target="_self">Billing Report</a></li>
             <li><a onclick="loadRightContent('_pro_projectReport.html')"href="pro_myProfile.html" target="_self">Profile</a></li>
         </ul>
-        <ul class="leftSideMenu" id ="user_menu" ><!--ng-show="$storage.loggedin_user.roleName==1"  ng-show="$storage.loggedin_user.roleName==2"-->
+        <ul class="leftSideMenu" id ="user_menu" ng-show="loggedin_user.roleName==1">
             <li><a onclick="loadRightContent('_tes_projectMarket.html')"href="tes_projectMarket.html" target="_self">My Project</a></li>
             <li><a onclick="loadRightContent('_tes_reportFeedback.html')"href="tes_purchasingProject.html" target="_self">My Bugs</a></li>
             <li><a onclick="loadRightContent('_tes_bugReportForm.html')"href="" target="_self">New Bug</a></li>
