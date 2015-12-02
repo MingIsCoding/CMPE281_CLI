@@ -1,5 +1,5 @@
 /** Angular CloudTest app controller */
-var server_url = "http://127.0.0.1:5000";
+var server_url = "http://10.15.167.208:5000";
 
 angular.module('CloudTestApp', ['ngStorage'])
     .controller('CloudTestAppController', ['$scope', '$http','$localStorage','$sessionStorage', function ($scope, $http,$localStorage,$sessionStorage) {
@@ -165,6 +165,13 @@ angular.module('CloudTestApp', ['ngStorage'])
         "projectId":"1",
         "userId":"1",
         "bugLevel" : ""
+    };
+
+    //Get projects
+    $scope.processGetProject=function(){
+        //console.log(JSON.stringify($scope.formCreateBugData));
+        alert('Fail to create project. Please try again');
+        $http.get("http://10.15.167.208:5000/projects").success(function(response) {$scope.projects = response.records;})
     };
 }]);
 
