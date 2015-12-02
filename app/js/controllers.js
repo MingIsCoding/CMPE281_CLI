@@ -16,7 +16,7 @@ angular.module('CloudTestApp', ['ngStorage'])
     /** Handle signin */
     $scope.formSigninData = {};
     $scope.processSignin = function() {
-
+        alert("success");
         //alert($sessionStorage.hello);
         if (!$scope.formSigninData.username) {
             $('.signin .userNameRow .err').removeClass('hidden');
@@ -170,6 +170,8 @@ angular.module('CloudTestApp', ['ngStorage'])
 
 
 function loadRightContent (module_name){
-    $("#right_content").load(module_name);
+    //$("#right_content").load(module_name);
+    //document.frames['rightContentFrame'].location = module_name;
+    document.getElementById("rightContentFrame").src = module_name;
 }
 

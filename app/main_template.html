@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Crowdsourcing Testing</title>
-    <link href='https://fonts.googleapis.com/css?family=Ropa+Sans' rel='stylesheet' type='text/css'>
+    <link href='css/css.css' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="css/main.css" />
     <script src="js/lib/angular.min.js"></script>
     <script src="js/lib/ngStorage.min.js"></script>
@@ -16,7 +16,7 @@
     <div data-ng-init="dashboard_load()" ></div>
     <!-- Top Side Begin -->
     <div class="topSide">
-        <h1>Crowdsourcing Testing Platform
+        <h1>Crowdsourcing Testing Platform{{3+6}}
             <span style=" font-size: 16px; color: brown;"
                   ng-show="$storage.loggedin_user.roleName == 1">App Provider</span>
             <span style=" font-size: 16px; color: brown;"
@@ -39,7 +39,7 @@
             <li><a href="" target="_self" onclick="loadRightContent('_pro_create_new_proj.html')">Create New Project</a></li>
             <li><a onclick="loadRightContent('_pro_projectReport.html')" href="" target="_self">Projects</a></li>
             <!--<li><a onclick="loadRightContent('_pro_projectReport.html')"href="pro_projectHistory.html" target="_self">Project History</a></li>-->
-            <li><a onclick="loadRightContent('_pro_projectReport.html')"href="pro_creditRecharge.html" target="_self">Billing Report</a></li>
+            <li><a onclick="loadRightContent('index.html')" target="_self">Billing Report</a></li>
             <li><a onclick="loadRightContent('_pro_projectReport.html')"href="pro_myProfile.html" target="_self">Profile</a></li>
         </ul>
         <ul class="leftSideMenu" id ="user_menu" ><!--ng-show="$storage.loggedin_user.roleName==1"  ng-show="$storage.loggedin_user.roleName==2"-->
@@ -58,9 +58,12 @@
 
     <!-- Right Side Begin -->
     <div id="right_content" class="rightSide">
-        <div class="pageTitlePosition">
+        <iframe id ="rightContentFrame" src="_tes_projectHistory.html" width="100%" height="100%">
+
+        </iframe>
+<!--        <div class="pageTitlePosition">
             <h2>Page Title</h2>
-        </div>
+        </div>-->
     </div>
     <!--Right Side End-->
 
