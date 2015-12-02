@@ -5,15 +5,16 @@ angular.module('CloudTestApp', ['ngStorage'])
     .controller('CloudTestAppController', ['$scope', '$http','$localStorage','$sessionStorage', function ($scope, $http,$localStorage,$sessionStorage) {
 
 	var myDate=new Date();
-    $scope.formSigninData = {};
 
-    //$scope.$storage.loggedin_user = {};
-        function getHeaders() {
+    function getHeaders() {
         return {
             'Content-Type': 'application/json'//'application/x-www-form-urlencoded',
         };
     }
+    //initiating local storage
+    $scope.$storage = $sessionStorage;
     /** Handle signin */
+    $scope.formSigninData = {};
     $scope.processSignin = function() {
 
         //alert($sessionStorage.hello);
@@ -32,12 +33,13 @@ angular.module('CloudTestApp', ['ngStorage'])
             data    : $scope.formSigninData,  // pass in data as strings
             headers : getHeaders()
         }).then(function(data) {
-            $localStorage.loggedin_user = data.data.results[0];
-            $localStorage.username = data.data.results[0].username;
-            $localStorage.hello = "hello";
+            $scope.$storage.loggedin_user = data.data.results[0];
+            //$localStorage.loggedin_user = data.data.results[0];
+            //$localStorage.username = data.data.results[0].username;
+            //$localStorage.hello = "hello";
             //$scope.$storage.loggedin_user = data.data.results[0];
-            console.log("storing $sessionStorage :"+JSON.stringify($localStorage.loggedin_user));
-            //console.log("storing $storage :"+JSON.stringify($scope.$storage.loggedin_user));
+            //console.log("storing $sessionStorage :"+JSON.stringify($localStorage.loggedin_user));
+            console.log("storing $storage :"+JSON.stringify($scope.$storage.loggedin_user));
             window.location = 'main_template.html'; //redirect to dashboard
         }, function(err) {
             alert('Fail to login. Please try again');
@@ -45,10 +47,10 @@ angular.module('CloudTestApp', ['ngStorage'])
     };
 
     $scope.dashboard_load = function(){
-        console.log("hello:"+$localStorage.hello);
-        //console.log("read from local storage"+JSON.stringify($scope.$storage.loggedin_user));
-        console.log("read from $sessionStorage in:"+JSON.stringify($localStorage.loggedin_user));
-        console.log("username:"+$localStorage.username)
+        //console.log("hello:"+$localStorage.hello);
+        console.log("read from local storage"+JSON.stringify($scope.$storage.loggedin_user));
+        //console.log("read from $sessionStorage in:"+JSON.stringify($localStorage.loggedin_user));
+        //console.log("username:"+$localStorage.username)
         }
     /** Handle sign up**/
     $scope.formSignupData = {
