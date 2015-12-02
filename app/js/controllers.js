@@ -47,6 +47,8 @@ angular.module('CloudTestApp', ['ngStorage'])
     };
 
     $scope.dashboard_load = function(){
+            if($scope.loggedin_user.roleName == "1")
+                loadRightContent("_tes_purchasingProject.html");
 
 
         }
