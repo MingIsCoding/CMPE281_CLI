@@ -1,17 +1,28 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Crowdsourcing Testing</title>
+    <link href='https://fonts.googleapis.com/css?family=Ropa+Sans' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <link rel="stylesheet" type="text/css" href="css/pro_creditRecharge.css" />
+</head>
+<body>
         <div class="pageTitlePosition">
             <h2>Bug Report</h2>
             <div class="contentPosition">
-                <form id="bugReportForm">
+                <form id="bugReportForm" ng-submit="processCreateBug()">
                     <ul>
                         <li><h3>Project Title</h3></li>
-                        <li><span>Bug Subject:</span><input id="bugSubject" type="text" maxlength="80"/></li>
-                        <li><span>Bug-causing Condition:</span><textarea id="bugCondition"></textarea></li>
-                        <li><span>Expected Result:</span><textarea id="exResult"></textarea></li>
-                        <li><span>Actual Result:</span><textarea id="acResult"></textarea> </li>
+                        <li><span>Bug Subject:</span><input id="bugSubject" type="text" maxlength="80"ng-model="formCreateBugData.bugName"/></li>
+                        <li><span>Bug-causing Condition:</span><textarea id="bugCondition"ng-model="formCreateBugData.causingCondition"></textarea></li>
+                        <li><span>Expected Result:</span><textarea id="exResult"ng-model="formCreateBugData.expetedResult"></textarea></li>
+                        <li><span>Actual Result:</span><textarea id="acResult"ng-model="formCreateBugData.actualResult"></textarea> </li>
                         <li><button id="reportSubmit" type="submit">Submit</button>
                             <button id="cancel" type="button">Cancel</button></li>
                     </ul>
                 </form>
             </div>
         </div>
+</body>
+</html>

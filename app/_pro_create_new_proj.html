@@ -1,14 +1,27 @@
-
-    <!-- Right Side Begin -->
+<!DOCTYPE html>
+<html ng-app="CloudTestApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Crowdsourcing Testing</title>
+    <link href='https://fonts.googleapis.com/css?family=Ropa+Sans' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <link rel="stylesheet" type="text/css" href="css/pro_createNew.css" />
+    <script src="js/lib/angular.min.js"></script>
+    <script src="js/lib/ngStorage.min.js"></script>
+    <script src="js/controllers.js"></script>
+</head>
+<body ng-controller="CloudTestAppController">
+<!-- Wrap Begin -->
+<div class="wrap">
 
         <div class="pageTitlePosition">
             <h2>Create New Project</h2>
             <div class="contentPosition">
-                <form id="proCreateProject">
+                <form id="proCreateProject" ng-submit="processCreatProject()">
                     <ul>
-                        <li><span>Project Name:</span><input id="projectName" type="text" /> </li>
+                        <li><span>Project Name:</span><input id="projectName" type="text" ng-model="formCreateProjectData.projectName" /> </li>
                         <li><span>Project OS:</span>
-                            <select id="osType">
+                            <select id="osType" ng-model="formCreateProjectData.projectOS" >
                                 <option value="Windows">Windows</option>
                                 <option value="OS">OS</option>
                                 <option value="Linux">Linux</option>
@@ -16,15 +29,18 @@
                                 <option value="Android">Android</option>
                             </select>
                         </li>
-                        <li><span>Project Deadline:</span><input id="deadline" type="text"  placeholder="MM-DD-YY" /> </li>
-                        <li><span>Number of Testers Needed:</span><input id="numberOftesters" type="text" /> </li>
-                        <li><span>Test App Upload:</span><input id="fileUpLoad" type="file" /></li>
-                        <li><span>Project Describe Upload:</span><input id="describeUpLoad" type="file" /></li>
+                        <li><span>Project Deadline:</span><input id="deadline" type="text" ng-model="formCreateProjectData.endTime"  placeholder="MM-DD-YY" /> </li>
+                        <li><span>Number of Testers Needed:</span><input id="testerAmount" type="text" ng-model="formCreateProjectData.testerAmount" /> </li>
+                        <li><span>Test App Upload:</span><input id="fileUpLoad" type="file" ng-model="formCreateProjectData.appDownloadAdd" /></li>
+                        <li><span>Project Describe Upload:</span><input id="describeUpLoad" type="file" ng-model="formCreateProjectData.docDownloadAdd" /></li>
                         <li><button id="createProject" type="submit">Create</button> </li>
                     </ul>
                 </form>
             </div>
         </div>
 
-    <!--Right Side End-->
-
+    <div class="clear"></div>
+</div>
+<!-- Wrap End -->
+</body>
+</html>
