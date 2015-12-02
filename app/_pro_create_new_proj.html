@@ -9,6 +9,22 @@
     <script src="js/lib/angular.min.js"></script>
     <script src="js/lib/ngStorage.min.js"></script>
     <script src="js/controllers.js"></script>
+    <script src="js/lib/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            $("#TestLevel,#testerAmount,#osType").change(function () {
+                //alert($("#TestLevel").val());
+                $("#eValue").val($("#TestLevel").val() * 100 * $("#testerAmount").val() * $("#osType").val()+".00");
+                //$("#eValue").val(100);
+            });
+            $("#TestLevel,#osType").change(function () {
+                //alert($("#TestLevel").val());
+                var amout = (10 - $("#TestLevel").val() ) * 100 * $("#osType").val();
+                $("#availableTesters").html("("+amout+" available)");
+                //$("#availableTesters").html("132");
+            });
+        })
+    </script>
 </head>
 <body ng-controller="CloudTestAppController">
 <!-- Wrap Begin -->
@@ -17,22 +33,38 @@
         <div class="pageTitlePosition">
             <h2>Create New Project</h2>
             <div class="contentPosition">
-                <form id="proCreateProject" ng-submit="processCreatProject()">
+                <form id="proCreateProject" ng-submit="processCreatProject()" ng-click="calculateBill">
                     <ul>
                         <li><span>Project Name:</span><input id="projectName" type="text" ng-model="formCreateProjectData.projectName" /> </li>
                         <li><span>Project OS:</span>
                             <select id="osType" ng-model="formCreateProjectData.projectOS" >
-                                <option value="Windows">Windows</option>
-                                <option value="OS">OS</option>
-                                <option value="Linux">Linux</option>
-                                <option value="iOS">iOS</option>
-                                <option value="Android">Android</option>
+                                <option value="1">Windows</option>
+                                <option value="4" selected>BlackBerryOS</option>
+                                <option value="5">Linux</option>
+                                <option value="3">iOS</option>
+                                <option value="2">Android</option>
                             </select>
                         </li>
                         <li><span>Project Deadline:</span><input id="deadline" type="text" ng-model="formCreateProjectData.endTime"  placeholder="MM-DD-YY" /> </li>
-                        <li><span>Number of Testers Needed:</span><input id="testerAmount" type="text" ng-model="formCreateProjectData.testerAmount" /> </li>
+                        <li><span>Project Type:</span><select id="proType" ng-model="formCreateProjectData.projectType" >
+                            <option value="100">Sport</option>
+                            <option value="520">Game</option>
+                            <option value="324">Reading</option>
+                            <option value="201">Travel</option>
+                            <option value="500" selected = "selected">Others</option>
+                        </select></li>
+                        <li><span>Tester Level</span><select id="TestLevel" ng-model="formCreateProjectData.TesterLevel" >
+                            <option value="1" selected = "selected" >1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="2.5">Random</option>
+                        </select></li>
+                        <li><span>Amount of Testers<span id="availableTesters" style="font-size: 16px;">(200 Available)</span>:</span><input id="testerAmount" type="text" ng-model="formCreateProjectData.testerAmount" /> </li>
+
                         <li><span>Test App Upload:</span><input id="fileUpLoad" type="file" ng-model="formCreateProjectData.appDownloadAdd" /></li>
                         <li><span>Project Describe Upload:</span><input id="describeUpLoad" type="file" ng-model="formCreateProjectData.docDownloadAdd" /></li>
+                        <!--<select ng-model="yourSelected" ng-options="person.id as person.name in persons"></select>-->
+                        <li><span>Estimate Budget({{formCreateProjectData.estimateBudgetl}}$):</span> <input id="eValue" type="text"  placeholder="0.00" /></li>
                         <li><button id="createProject" type="submit">Create</button> </li>
                     </ul>
                 </form>

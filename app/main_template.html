@@ -16,11 +16,11 @@
     <div data-ng-init="dashboard_load()" ></div>
     <!-- Top Side Begin -->
     <div class="topSide">
-        <h1>Crowdsourcing Testing Platform
+        <h1>AppZone Testing Platform
             <span style=" font-size: 16px; color: brown;"
-                  ng-show="loggedin_user.roleName == 2">App Provider</span>
+                  ng-show="loggedin_user.roleName == 1">App Provider</span>
             <span style=" font-size: 16px; color: brown;"
-                  ng-show="loggedin_user.roleName == 1">App Tester</span>
+                  ng-show="loggedin_user.roleName == 2">App Tester</span>
         </h1>
         <ul>
             <li><img src="img/userIco.png" alt="userIco.png" /></li>
@@ -35,14 +35,14 @@
 
     <!-- Left Side Begin -->
     <div class="leftSide">
-        <ul class="leftSideMenu" id ="provider_menu" ng-show="loggedin_user.roleName==2">
+        <ul class="leftSideMenu" id ="provider_menu" ng-show="loggedin_user.roleName==1">
             <li><a onclick="loadRightContent('_pro_create_new_proj.html')">Create New Project</a></li>
-            <li><a onclick="loadRightContent('_pro_project_list.html')" >Projects</a></li>
+            <li><a onclick="loadRightContent('_pro_project_list.html')" >Ongoing Projects</a></li>
             <li><a onclick="loadRightContent('_pro_project_list.html')"href="" target="_self">Project History</a></li>
             <li><a onclick="loadRightContent('_pro_creditRecharge.html')">Credit recharge</a></li>
             <li><a onclick="loadRightContent('_pro_myProfile.html')">My profile</a></li>
         </ul>
-        <ul class="leftSideMenu" id ="user_menu" ng-show="loggedin_user.roleName==1" ><!--ng-show="$storage.loggedin_user.roleName==1"  ng-show="$storage.loggedin_user.roleName==2"-->
+        <ul class="leftSideMenu" id ="user_menu" ng-show="loggedin_user.roleName==2" ><!--ng-show="$storage.loggedin_user.roleName==1"  ng-show="$storage.loggedin_user.roleName==2"-->
             <li><a onclick="loadRightContent('_tes_projectMarket.html')"href="" target="_self">Project Market</a></li>
             <li><a onclick="loadRightContent('_tes_purchasingProject.html')" target="_self">My Project</a></li>
             <li><a onclick="loadRightContent('_tes_projectHistory.html')" target="_self">My Project History</a></li>

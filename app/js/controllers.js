@@ -21,6 +21,9 @@ angular.module('CloudTestApp', ['ngStorage'])
     $scope.$storage = $localStorage;
     /** Handle signin */
     $scope.formSigninData = {};
+        $scope.calculateBill = function(){
+          alert("ewote");
+        } ;
     $scope.processSignin = function() {
         //alert($sessionStorage.hello);
         if (!$scope.formSigninData.username) {
@@ -47,9 +50,10 @@ angular.module('CloudTestApp', ['ngStorage'])
     };
 
     $scope.dashboard_load = function(){
-            if($scope.loggedin_user.roleName == "1")
+            if($scope.loggedin_user.roleName == "2")
                 loadRightContent("_tes_purchasingProject.html");
-
+            else
+                loadRightContent("_pro_project_list.html");
 
         }
     /** Handle sign up**/
@@ -127,8 +131,12 @@ angular.module('CloudTestApp', ['ngStorage'])
     $scope.formCreateProjectData = {
             "userId" : "1",
             "appDownloadAdd" : "",
-            "docDownloadAdd" : ""
+            "docDownloadAdd" : "",
+            "TesterLevel":0,
+            "testerAmount":0,
+        "estimateBudget":0
     };
+    //$scope.formCreateProjectData.estimateBudget = ($scope.formCreateProjectData.TesterLevel) * 200 * ($scope.formCreateProjectData.testerAmount);
     $scope.formCreateProjectData.startTime = new Date();
     $scope.processCreatProject=function(){
         console.log(JSON.stringify($scope.formCreateProjectData));
@@ -174,7 +182,6 @@ angular.module('CloudTestApp', ['ngStorage'])
         $http.get("http://10.15.167.208:5000/projects").success(function(response) {$scope.projects = response.records;})
     };
 }]);
-
 
 function loadRightContent (module_name){
     //$("#right_content").load(module_name);
