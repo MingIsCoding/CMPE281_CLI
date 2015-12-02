@@ -35,22 +35,22 @@
 
     <!-- Left Side Begin -->
     <div class="leftSide">
-        <ul class="leftSideMenu" id ="provider_menu" >
-            <li><a href="" target="_self" onclick="loadRightContent('_pro_create_new_proj.html')">Create New Project</a></li>
-            <li><a onclick="loadRightContent('_pro_project_list.html')" href="" target="_self">Projects</a></li>
+        <ul class="leftSideMenu" id ="provider_menu" ng-show="loggedin_user.roleName==2">
+            <li><a onclick="loadRightContent('_pro_create_new_proj.html')">Create New Project</a></li>
+            <li><a onclick="loadRightContent('_pro_project_list.html')" >Projects</a></li>
             <li><a onclick="loadRightContent('_pro_project_list.html')"href="" target="_self">Project History</a></li>
             <li><a onclick="loadRightContent('_pro_creditRecharge.html')">Credit recharge</a></li>
             <li><a onclick="loadRightContent('_pro_myProfile.html')">My profile</a></li>
         </ul>
-        <ul class="leftSideMenu" id ="user_menu" ><!--ng-show="$storage.loggedin_user.roleName==1"  ng-show="$storage.loggedin_user.roleName==2"-->
+        <ul class="leftSideMenu" id ="user_menu" ng-show="loggedin_user.roleName==1" ><!--ng-show="$storage.loggedin_user.roleName==1"  ng-show="$storage.loggedin_user.roleName==2"-->
             <li><a onclick="loadRightContent('_tes_projectMarket.html')"href="" target="_self">Project Market</a></li>
-            <li><a onclick="loadRightContent('_tes_purchasingProject.html')"href="" target="_self">My Project</a></li>
-            <li><a onclick="loadRightContent('_tes_projectHistory.html')"href="" target="_self">My Project History</a></li>
-            <li><a onclick="loadRightContent('_tes_reportFeedback.html')"href="" target="_self">My Bugs</a></li>
-            <li><a onclick="loadRightContent('_tes_bugReportForm.html')"href="" target="_self">New Bug</a></li>
-            <li><a onclick="loadRightContent('_tes_creditWithdraw.html')"href="" target="_self">Credit Withdraw</a></li>
+            <li><a onclick="loadRightContent('_tes_purchasingProject.html')" target="_self">My Project</a></li>
+            <li><a onclick="loadRightContent('_tes_projectHistory.html')" target="_self">My Project History</a></li>
+            <li><a onclick="loadRightContent('_tes_reportFeedback.html')" target="_self">My Bugs</a></li>
+            <li><a onclick="loadRightContent('_tes_bugReportForm.html')" target="_self">New Bug</a></li>
+            <li><a onclick="loadRightContent('_tes_creditWithdraw.html')" target="_self">Credit Withdraw</a></li>
             <!--<li><a onclick="loadRightContent('_pro_projectReport.html')"href="tes_projectInviation.html" target="_self">Project Inviation</a></li>-->
-            <li><a onclick="loadRightContent('_tes_myProfile.html')"href="" target="_self">My Profile</a></li>
+            <li><a onclick="loadRightContent('_tes_myProfile.html')"target="_self">My Profile</a></li>
         </ul>
     </div>
     <!-- Left Side End -->

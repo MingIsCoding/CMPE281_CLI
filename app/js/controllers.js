@@ -1,5 +1,5 @@
 /** Angular CloudTest app controller */
-var server_url = "http://10.15.167.208:5000";
+var server_url = "http://127.0.0.1:5000";
 
 angular.module('CloudTestApp', ['ngStorage'])
     .controller('CloudTestAppController', ['$scope', '$http','$localStorage','$sessionStorage', function ($scope, $http,$localStorage,$sessionStorage) {
